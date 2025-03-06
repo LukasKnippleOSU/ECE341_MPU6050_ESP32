@@ -1,6 +1,6 @@
 
 // Reading an MPU6050 accelerometer with an ESP32 over I2C
-// Output is indicated using three LEDs to represent the G-force experience by each 
+// Output is indicated using three LEDs to represent the G-force experienced by each 
 // X, Y, or Z axis
 
 /* Include the necessary libraries*/
@@ -13,8 +13,8 @@
 #define X_LED_PIN 4 //GPIO pin #4 on the ESP32
 #define Y_LED_PIN 0 //GPIO pin #0 on the ESP32
 #define Z_LED_PIN 2 //GPIO pin #2 on the ESP32
-#define LOWER_G_RANGE 0
-#define HIGHER_G_RANGE 1
+#define LOWER_G_RANGE 1
+#define HIGHER_G_RANGE 3
 
 /* Define the necessary variables (MPU6050 object, boolean values, gravity setting)*/
 Adafruit_MPU6050 mpu;
