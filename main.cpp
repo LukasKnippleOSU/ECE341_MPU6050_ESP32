@@ -16,8 +16,13 @@
 #define LOWER_G_RANGE 1
 #define HIGHER_G_RANGE 3
 
-/* Define the necessary variables (MPU6050 object, boolean values, gravity setting)*/
+/* Define the necessary variables 
+(MPU6050 object, G-force variables, boolean controls)*/
 Adafruit_MPU6050 mpu;
+double xG = 0;
+double yG = 0;
+double zG = 0;
+double magG = 0;
 bool triggerX = false;
 bool triggerY = false;
 bool triggerZ = false;
@@ -95,13 +100,15 @@ void loop() {
   }
   
 
-  /* Print out the G-force values */
+ /* Print out the G-force values */
   Serial.print("Acceleration X: ");
   Serial.print(xG);
   Serial.print(", Y: ");
   Serial.print(yG);
   Serial.print(", Z: ");
   Serial.print(zG);
+  Serial.print(", Magnitude: ");
+  Serial.print(magG);
   Serial.println(" G-force");
 
   Serial.println("");
